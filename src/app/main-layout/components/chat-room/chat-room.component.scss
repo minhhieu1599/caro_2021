@@ -1,0 +1,28 @@
+.left-room {
+  height: calc(100vh - 64px);
+}
+
+.right-room {
+  height: calc(100vh - 64px);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.icon-style {
+  width: 32px;
+  height: 32px;
+}
+
+.room-image {
+  width: 100%;
+}
+
+.btn-create-room {
+  float: right;
+  background-color: #3f3d56;
+  color: white;
+  margin: 12px 12px 0 0;
+}

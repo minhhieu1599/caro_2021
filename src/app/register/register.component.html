@@ -1,0 +1,41 @@
+<div class="parent-layout">
+  <div class="main-block">
+    <img src="assets/images/login/cat.svg" class="image-head" />
+    <h2 style="text-align: center; color: #3f3d56;font-weight: 600;">Đăng Ký</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tên người dùng</mat-label>
+      <input matInput placeholder="Name" [(ngModel)]="registerModel.name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tài khoản</mat-label>
+      <input matInput placeholder="UserName" [(ngModel)]="registerModel.userName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mật khẩu</mat-label>
+      <input matInput placeholder="********" [type]="hide ? 'password' : 'text'" [(ngModel)]="registerModel.password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Xác nhận mật khẩu</mat-label>
+      <input matInput placeholder="********" [type]="hide ? 'password' : 'text'"
+        [(ngModel)]="registerModel.confirmPassword">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+      </button>
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="registerModel.isAdmin">Check Admin?</mat-checkbox>
+
+    <button mat-raised-button style="float: right; background-color: #83FF63; color: white" (click)="registerUserClick()">
+      Đăng Ký
+    </button>
+
+  </div>
+</div>

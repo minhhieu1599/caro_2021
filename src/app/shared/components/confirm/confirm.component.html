@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Cảnh báo</h1>
+<div mat-dialog-content>
+  <p>Bạn có chắc với thao tác này?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Hủy bỏ</button>
+  <button mat-button (click)="agree()" cdkFocusInitial color="warn">Đồng ý</button>
+</div>

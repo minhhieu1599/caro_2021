@@ -1,0 +1,82 @@
+.left-room {
+  height: calc(100vh - 393px);
+
+}
+
+.right-room{
+  height: calc(100vh - 58px);
+
+}
+
+.title{
+  font-weight: 600;
+  font-size: 14px;
+}
+
+
+.icon-style{
+  width: 32px;
+  height: 32px;
+}
+
+.btn-create-room{
+  float: right;
+  background-color: #3f3d56;
+  color: white;
+  margin: 12px 12px 0 0;
+}
+
+.chat-block{
+  width: 100%;
+  height: calc(100vh - 291px);
+}
+
+.display-message{
+  width: 100%;
+  height: calc(100vh - 369px);
+  background-color: whitesmoke;
+}
+
+.input-message{
+  width: 100%;
+  height: 60px;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.item-message{
+  padding: 10px 0px 0 10px;
+}
+.icon{
+  width: 50px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-size {
+  width: 32px;
+  line-height: 32px;
+}
+
+.message{
+  border-radius: 10px;
+  background-color: #3f3d56;
+  color: white;
+  word-wrap:break-word;
+  padding: 10px;
+  max-width: calc(100% - 70px);
+}
+
+.banner-image {
+  width: 100%;
+  height: 50%;
+}
+
+
+mat-grid-tile {
+  background:thistle;
+}

@@ -1,0 +1,25 @@
+<div class="parent-layout">
+  <div class="main-block">
+    <img src="assets/images/login/cat.svg" class="image-head" />
+    <h2 style="text-align: center; color: #3f3d56;font-weight: 600;">Đăng Nhập</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tài khoản</mat-label>
+      <input matInput placeholder="UserName" [(ngModel)]="user.userName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mật khẩu</mat-label>
+      <input matInput placeholder="********" [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" (keyup.enter)="loginUser()">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+
+      </button>
+    </mat-form-field>
+
+    <p style="color:#83FF63; cursor: pointer;" (click)="goToNav('register')">Đăng ký tài khoản?</p>
+    <button mat-raised-button style="float: right; background-color: #83FF63; color: white" (click)="loginUser()">
+      Đăng Nhập
+    </button>
+  </div>
+</div>

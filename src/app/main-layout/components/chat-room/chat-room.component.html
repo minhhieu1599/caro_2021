@@ -1,0 +1,45 @@
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="16px" fxLayoutAlign="center">
+  <!-- Danh sách người chơi  -->
+  <div fxFlex="20%" class="left-room" >
+    <mat-list style="height: calc(100vh - 144px); width: 100%; overflow: auto;">
+      <div mat-subheader>Danh sách người online</div>
+
+      <mat-list-item matRipple *ngFor="let user of users">
+        <img mat-list-icon src="assets/icon/Creative-Tail-Animal-bat.svg" class="icon-style">
+        <div mat-line><label class="title">{{ user.name }} - {{ (true === user.status)? "Online": "Offline"}}</label>
+        </div>
+        <div mat-line> {{ user.score }} </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <!-- Danh sách phòng chơi -->
+  <div fxFlex="75%" class="right-room">
+    <mat-list>
+      <div mat-subheader>Phòng chờ</div>
+    </mat-list>
+
+    <div style="height: calc(100vh - 185px); overflow: auto;">
+      <mat-grid-list cols="7" rowHeight="1:1" gutterSize="16px">
+
+        <mat-grid-tile matRipple *ngFor="let room of rooms" (click)="openConfirmDialog(room)">
+          <mat-grid-tile-header>
+            {{ room.name }} - {{ room.status == 1?"Hoạt dộng": (room.status==2)?"Đang có khách": "dừng hoạt động"}}
+          </mat-grid-tile-header>
+          <img src="assets/icon/room/room.svg" class="room-image">
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <!-- Nút tạo phòng -->
+    <mat-divider></mat-divider>
+    <div style="height: 60px; width: 100%;">
+      <button mat-flat-button class="btn-create-room">Tạo phòng</button>
+    </div>
+
+  </div>
+
+
