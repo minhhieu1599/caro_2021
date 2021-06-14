@@ -15,21 +15,8 @@ export class CaroOnlineApiService {
 
   public postRegisterUser = (registerModel: RegisterModel) => this.http.post(`${environment.caroDomain}/api/User/register`, registerModel, { responseType: 'text' });
 
+
   public postLoginUser = (loginModel: LoginModel) => this.http.post(`${environment.caroDomain}/api/User/login`, loginModel, { responseType: 'text' });
-//api cho login
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   public getUsers = () => this.http.get(`${environment.caroDomain}/api/User/get-users`);
 
@@ -41,4 +28,8 @@ export class CaroOnlineApiService {
   public joinRoom = (userId: string, roomId: string) => this.http.post(`${environment.caroDomain}/api/UserRooms`,
     { userId: userId, roomId: roomId }
   );
+
+  public leaveRoom = (userId: string, roomId: string) => this.http.delete(`${environment.caroDomain}/api/UserRooms/${userId}/${roomId}`, { responseType: 'text' });
+
+  public sendMessage = (userId: any, roomId: any, message: any) => this.http.post(`${environment.caroDomain}/api/Chat/message-user`, { userId: userId, roomId: roomId, message: message });
 }

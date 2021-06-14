@@ -1,9 +1,8 @@
-
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="16px" fxLayoutAlign="center">
   <!-- Danh sách người chơi  -->
-  <div fxFlex="20%" class="left-room" >
+  <div fxFlex="20%" class="left-room">
     <mat-list style="height: calc(100vh - 144px); width: 100%; overflow: auto;">
-      <div mat-subheader>Danh sách người online</div>
+      <div mat-subheader>Danh sách người chơi</div>
 
       <mat-list-item matRipple *ngFor="let user of users">
         <img mat-list-icon src="assets/icon/Creative-Tail-Animal-bat.svg" class="icon-style">
@@ -41,5 +40,3 @@
     </div>
 
   </div>
-
-

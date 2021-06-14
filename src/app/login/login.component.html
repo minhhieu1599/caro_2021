@@ -1,6 +1,6 @@
 <div class="parent-layout">
   <div class="main-block">
-    <img src="assets/images/login/cat.svg" class="image-head" />
+    <img src="assets/images/login/login2.svg" class="image-head" />
     <h2 style="text-align: center; color: #3f3d56;font-weight: 600;">Đăng Nhập</h2>
 
     <mat-form-field appearance="outline">
@@ -13,12 +13,12 @@
       <input matInput placeholder="********" [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" (keyup.enter)="loginUser()">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
-
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
 
-    <p style="color:#83FF63; cursor: pointer;" (click)="goToNav('register')">Đăng ký tài khoản?</p>
-    <button mat-raised-button style="float: right; background-color: #83FF63; color: white" (click)="loginUser()">
+    <p style="color: #536DFE; cursor: pointer;" (click)="goToNav('register')">Bạn chưa có tài khoản?</p>
+    <button mat-raised-button style="float: right; background-color: #536DFE; color: white" (click)="loginUser()">
       Đăng Nhập
     </button>
   </div>

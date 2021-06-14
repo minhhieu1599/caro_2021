@@ -38,7 +38,7 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
     this.getRooms();
     //kết nối cổng thời gian thực
     this._caroRealtime.startConnection();
-    // Lắng nghe sự thay đổi của user 
+    // Lắng nghe sự thay đổi của user
     this._caroRealtime.addTransferUserOnlineListener();
 
     const token = localStorage.getItem('access_token')?.toString();
@@ -94,17 +94,15 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
       if (!isAgree)
         return;
 
-
       // đã đồng ý
 
       this._caroOnlineApiService.joinRoom(this.decodedToken.id, room.id).subscribe((result: any) => {
+        localStorage.setItem('userId', this.decodedToken.id);
+        localStorage.setItem('roomId', room.id);
         this.goToNav('main/match-dual');
       }, (error) => {
         this.openSnackBar(error);
       });
-
-
-
     });
 
   }

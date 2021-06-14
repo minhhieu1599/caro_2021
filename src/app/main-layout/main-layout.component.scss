@@ -1,6 +1,5 @@
 .main-head{
   height: 64px;
-
 }
 
 .main-body{
@@ -26,27 +25,4 @@
   padding: 10px;
   font-weight: 600;
   color: #3f3d56;
-}
-
-.main-head {
-  height: 65px;
-  background-color: aqua;
-}
-
-.main-body {
-  height: calc(100vh-665px);;
-  background-color: aquamarine;
-}
-.toolbar-spacer {
-  flex: 1 1 auto;
-}
-.main-toolbar{
-  color:white;
-}
-.menu-image{
-  width: 270px;
-}
-.main-name{
-  padding: 7px;
-  font-weight: 500;
 }

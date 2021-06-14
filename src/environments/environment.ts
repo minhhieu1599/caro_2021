@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // caroDomain: 'http://116.101.16.15:5000'
-  caroDomain: 'https://localhost:44346'
+  caroDomain: 'https://localhost:44313'
 };
 
 /*

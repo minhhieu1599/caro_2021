@@ -38,14 +38,7 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
-  {
-    path: 'chat-room',
-    component: ChatRoomComponent
-  },
-  {
-    path: 'match-dual',
-    component: MatchDualComponent
-  },
+
 ];
 
 @NgModule({

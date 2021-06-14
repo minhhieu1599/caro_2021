@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _caroOnlineApiService: CaroOnlineApiService,
     private _snackBar: MatSnackBar,
-    private _router: Router
+    private _router: Router  
   ) {
     this.registerModel = new RegisterModel();
   }
@@ -38,14 +38,14 @@ export class RegisterComponent implements OnInit {
     localStorage.setItem('user_name_register', this.registerModel.userName);
     localStorage.setItem('password_register', this.registerModel.password);
     localStorage.setItem('loading_register', 'true');
-
+    
     this.goToNav('login');
   }
 
   public registerUser() {
     return new Promise<any>((resolve, reject) => {
       this._caroOnlineApiService.postRegisterUser(this.registerModel).subscribe((response: any) => {
-        // khi mà đăng kí thành công
+        // khi mà đăng kí thành công 
         resolve({
           statusCode: 200,
           message: response

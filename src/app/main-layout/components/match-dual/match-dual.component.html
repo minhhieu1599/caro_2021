@@ -1,14 +1,30 @@
-<app-main-layout></app-main-layout>
-<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="16px" fxLayoutAlign="center" style="width: 100%">
-  <div fxFlex="20%" class="left-room">
+<div
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutWrap
+  fxLayoutGap="16px"
+  fxLayoutAlign="center"
+  style="width: 100%"
+>
+  <div fxFlex="25%" class="left-room">
     <!-- Hiển thị tên phòng vào nút thoát -->
     <mat-list>
       <div mat-subheader>
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="16px" fxLayoutAlign="center"
-          style="width: 100%">
+        <div
+          fxLayout="row"
+          fxLayout.xs="column"
+          fxLayoutWrap
+          fxLayoutGap="16px"
+          fxLayoutAlign="center"
+          style="width: 100%"
+        >
           <div fxFlex style="line-height: 40px; color: #3f3d56">Phòng 01</div>
           <div fxFlex="40px">
-            <button mat-icon-button style="color: #3f3d56">
+            <button
+              mat-icon-button
+              style="color: #3f3d56"
+              (click)="leaveRoom()"
+            >
               <mat-icon>exit_to_app</mat-icon>
             </button>
           </div>
@@ -28,23 +44,32 @@
 
     <!-- Màn hình chat  -->
     <div class="chat-block">
-      <div class="display-message">
+      <div class="display-message" style="overflow: auto">
         <!-- Hiển thị tin nhắn -->
-        <div [fxLayout]="user.name == item.owner ? 'row':'row-reverse'" fxLayoutWrap style="width: 100%"
-          fxLayoutAlign="end center" class="item-message" *ngFor="let item of messages">
+        <div
+          [fxLayout]="user.name == item.owner ? 'row' : 'row-reverse'"
+          fxLayoutWrap
+          style="width: 100%"
+          fxLayoutAlign="end center"
+          class="item-message"
+          *ngFor="let item of messages"
+        >
           <div class="message">{{ item.content }}</div>
           <div class="icon">
             <img [src]="item.icon" class="icon-size" />
           </div>
-
         </div>
-
       </div>
 
       <!-- Ô nhập tin nhắn chat -->
       <div class="input-message">
         <mat-form-field appearance="outline">
-          <input matInput placeholder="Chat...!" (keyup.enter)="sendMessage($event)" [(ngModel)]="tempMessage" />
+          <input
+            matInput
+            placeholder="Chat...!"
+            (keyup.enter)="sendMessage($event)"
+            [(ngModel)]="tempMessage"
+          />
         </mat-form-field>
       </div>
     </div>
@@ -53,21 +78,24 @@
   <mat-divider [vertical]="true"></mat-divider>
 
   <!-- Màn hình trận đấu -->
-  <div fxFlex="75%" class="right-room">
+  <div fxFlex="70%" class="right-room">
     <mat-list>
       <div mat-subheader>TRẬN ĐẤU</div>
     </mat-list>
 
     <div style="height: calc(100vh - 185px)">
-      <mat-grid-list cols="30" rowHeight="1:1">
-        <mat-grid-tile *ngFor="let item of boardChess" matRipple></mat-grid-tile>
+      <mat-grid-list cols="20" rowHeight="1:1">
+        <mat-grid-tile
+          *ngFor="let item of boardChess"
+          matRipple
+        ></mat-grid-tile>
       </mat-grid-list>
     </div>
 
     <mat-divider></mat-divider>
 
     <div style="height: 60px; width: 100%">
-      <button mat-flat-button class="btn-create-room">End game</button>
+      <button mat-flat-button class="btn-create-room">...</button>
     </div>
   </div>
 </div>
