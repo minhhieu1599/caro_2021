@@ -30,10 +30,10 @@ export class MainLayoutComponent implements OnInit {
   }
 
   public logout = () => {
-    //localStorage.clear(); // xóa toàn bộ những cặp giá trị key-value 
+    localStorage.clear(); // xóa toàn bộ những cặp giá trị key-value
 
 
-    localStorage.removeItem('access_token');
+    // localStorage.removeItem('access_token');
 
     let loginModel: LoginModel = new LoginModel();
     loginModel.userName = this.decodedToken.userName;

@@ -80,7 +80,14 @@
   <!-- Màn hình trận đấu -->
   <div fxFlex="70%" class="right-room">
     <mat-list>
-      <div mat-subheader>TRẬN ĐẤU</div>
+      <div mat-subheader>
+        TRẬN ĐẤU -
+        {{
+          isTurnOfFirstUser == true
+            ? "Lượt của người chơi " + firstUser?.name
+            : "Lượt của người chơi " + secondUser?.name
+        }}
+      </div>
     </mat-list>
 
     <div style="height: calc(100vh - 185px)">
@@ -88,14 +95,23 @@
         <mat-grid-tile
           *ngFor="let item of boardChess"
           matRipple
-        ></mat-grid-tile>
+          (click)="MarkFlag(item)"
+        >
+          {{
+            item?.mark == true
+              ? item?.player == currentMatch?.firstUserId
+                ? "x"
+                : "o"
+              : ""
+          }}
+        </mat-grid-tile>
       </mat-grid-list>
     </div>
 
     <mat-divider></mat-divider>
 
     <div style="height: 60px; width: 100%">
-      <button mat-flat-button class="btn-create-room">...</button>
+      <button mat-flat-button class="btn-create-room">Mời đấu</button>
     </div>
   </div>
 </div>
